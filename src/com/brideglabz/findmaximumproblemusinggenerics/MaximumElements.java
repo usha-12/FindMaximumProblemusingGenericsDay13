@@ -66,7 +66,6 @@ public class MaximumElements <T extends Comparable<T>>{
         }
         System.out.println(maximumVariable + " is maximum out of " + firstVariable + ", " + secondVariable + " and " + thirdVariable);
     }
-
 }
 /*Extend the max
 method to also print
