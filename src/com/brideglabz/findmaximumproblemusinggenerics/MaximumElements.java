@@ -14,59 +14,32 @@ public class MaximumElements {
         String string2 = "Peach";
         String string3 = "Banana";
         findMax(string1, string2, string3);
+
         findMax(firstNumber, secondNumber, thirdNumber);
         findMax(floatNum1, floatNum2, floatNum3);
     }
+
     /* TC -1.1  Given Max Number at 1st Position return the Same Number Ensure the test data has Max Number in the First position*/
     /*Tc -1.2  Given Max Number at 2nd Position return the Same Number Ensure the test data has Max Number in the Second position*/
     /*TC -1.3  Given Max Number at 3rd Position return the Same Number Ensure the test data has Max Number in the Third position*/
-    public static void findMax(Integer firstNumber, Integer secondNumber, Integer thirdNumber) {
-        Integer maximumNumber;
+    public static<E extends Comparable<E>> void findMax(E firstVariable, E secondVariable, E thirdVariable) {
+        E maximumVariable;
         System.out.println("-----------------------------------------------------------------------");
         System.out.println();
-        if (firstNumber.compareTo(secondNumber) > 0 && firstNumber.compareTo(thirdNumber) > 0) {
-            maximumNumber = firstNumber;
-        } else if (secondNumber.compareTo(firstNumber) > 0 && secondNumber.compareTo(thirdNumber) > 0) {
-            maximumNumber = secondNumber;
+        if (firstVariable.compareTo(secondVariable) > 0 && firstVariable.compareTo(thirdVariable) > 0) {
+            maximumVariable = firstVariable;
+        } else if (secondVariable.compareTo(firstVariable) > 0 && secondVariable.compareTo(thirdVariable) > 0) {
+            maximumVariable = secondVariable;
         } else {
-            maximumNumber = thirdNumber;
+            maximumVariable = thirdVariable;
         }
-        System.out.println(maximumNumber + " is maximum out of " + firstNumber + ", " + secondNumber + " and " + thirdNumber);
-    }
-    public static void findMax(Float firstNumber, Float secondNumber, Float thirdNumber) {
-        Float maximumNumber;
-        System.out.println("----------------------------------------------------------------------");
-        System.out.println();
-
-        if (firstNumber.compareTo(secondNumber) > 0 && firstNumber.compareTo(thirdNumber) > 0) {
-            maximumNumber = firstNumber;
-        } else if (secondNumber.compareTo(firstNumber) > 0 && secondNumber.compareTo(thirdNumber) > 0) {
-            maximumNumber = secondNumber;
-        } else {
-            maximumNumber = thirdNumber;
-        }
-        System.out.println(maximumNumber + " is maximum out of " + firstNumber + ", " + secondNumber + " and " + thirdNumber);
-    }
-    public static void findMax(String firstString, String secondString, String thirdString) {
-        String maximumString;
-        System.out.println("-------------------------------------------------------------------");
-        System.out.println();
-
-        if(firstString.compareTo(secondString)>0 && firstString.compareTo(thirdString)>0) {
-            maximumString = firstString;
-        }
-        else if(secondString.compareTo(firstString)>0 && secondString.compareTo(thirdString)>0) {
-            maximumString = secondString;
-        }
-        else {
-            maximumString = thirdString;
-        }
-
-        System.out.println(maximumString + " is maximum out of "+firstString+", "+secondString+" and "+thirdString);
+        System.out.println(maximumVariable + " is maximum out of " + firstVariable + ", " + secondVariable + " and " + thirdVariable);
     }
 }
-/*Given 3 Strings find the maximum
-- Ensure to test code with the Test
-Case and repeat with the similar 3
-Test cases in UC 1
-UC 3 - E.g. Apple Peach Banana*/
+/*Refactor 1
+Refactor all the 3 to
+One Generic Method
+and find the maximum
+- Ensure the Generic Type extends
+Comparable
+ - Make the test case work*/
