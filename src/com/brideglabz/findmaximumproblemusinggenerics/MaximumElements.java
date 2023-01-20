@@ -1,8 +1,19 @@
 package com.brideglabz.findmaximumproblemusinggenerics;
 
-public class MaximumElements {
+public class MaximumElements <T extends Comparable<T>>{
+    T variable1;
+    T variable2;
+    T variable3;
+    public MaximumElements(T variable1, T variable2, T variable3){
+        this.variable1 = variable1;
+        this.variable2 = variable2;
+        this.variable3 = variable3;
+    }
+    public void findMax(){
+        MaximumElements.findMax(this.variable1, this.variable2, this.variable3);
+    }
+
     public static void main(String[] args) {
-        System.out.println("Welcome to the Find Maximum Problem using Generics");
         System.out.println("Test Maximum of 3 Variables \n");
         Integer firstNumber = 10;
         Integer secondNumber = 20;
@@ -28,7 +39,6 @@ public class MaximumElements {
         System.out.println();
         if (firstVariable.compareTo(secondVariable) > 0 && firstVariable.compareTo(thirdVariable) > 0) {
             maximumVariable = firstVariable;
-        } else if (secondVariable.compareTo(firstVariable) > 0 && secondVariable.compareTo(thirdVariable) > 0) {
             maximumVariable = secondVariable;
         } else {
             maximumVariable = thirdVariable;
@@ -36,10 +46,12 @@ public class MaximumElements {
         System.out.println(maximumVariable + " is maximum out of " + firstVariable + ", " + secondVariable + " and " + thirdVariable);
     }
 }
-/*Refactor 1
-Refactor all the 3 to
-One Generic Method
-and find the maximum
-- Ensure the Generic Type extends
-Comparable
- - Make the test case work*/
+/*Refactor to create Generic
+Class to take in 3 variables of
+Generic Type
+- Ensure the Generic Type extends Comparable
+- Write parameter constructor
+- Write testMaximum method to internally call the
+static testMaximum method passing the 3
+instance variables
+- Define new test case to use the Generic Class*/
