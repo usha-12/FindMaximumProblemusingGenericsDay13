@@ -25,6 +25,7 @@ public class MaximumElements <T extends Comparable<T>>{
         String string2 = "Peach";
         String string3 = "Banana";
         findMax(string1, string2, string3);
+
         findMax(firstNumber, secondNumber, thirdNumber);
         findMax(floatNum1, floatNum2, floatNum3);
     }
@@ -38,8 +39,6 @@ public class MaximumElements <T extends Comparable<T>>{
         System.out.println();
         if (firstVariable.compareTo(secondVariable) > 0 && firstVariable.compareTo(thirdVariable) > 0) {
             maximumVariable = firstVariable;
-        }
-        else if (secondVariable.compareTo(firstVariable) > 0 && secondVariable.compareTo(thirdVariable) > 0) {
             maximumVariable = secondVariable;
         } else {
             maximumVariable = thirdVariable;
